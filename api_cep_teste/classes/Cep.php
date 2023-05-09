@@ -26,8 +26,8 @@ class Cep{
 
     curl_setopt_array($curl,
     [
-        CURLOPT_RETURNTRANSFER => 1,
-        CURLOPT_URL => $endereco
+        CURLOPT_RETURNTRANSFER => 1, // resulado volta em string "return"
+        CURLOPT_URL => $endereco // o end point do site viacep 
     ]);
 
     // executando a api com retorno e dados por json e usando decode para tratar os dados true=virar array

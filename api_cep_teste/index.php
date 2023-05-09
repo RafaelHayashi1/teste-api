@@ -1,8 +1,8 @@
 <?php
 include "classes/Cep.php";
 
-echo "Vou pesquisar o cep 16200374";
-$cep = 16200374;
+$cep = isset($_GET['cep'])?$_GET['cep']: $cep = "erro";
+echo "Vou pesquisar o cep: $cep";
                     //host                     cep modo que o arquivo ira voltar
 $pesqCep = new Cep("https://viacep.com.br/ws/",$cep,"json");
 
@@ -24,6 +24,9 @@ echo"</pre>";
     <title>Document</title>
 </head>
 <body>
-    
+    <form method="set">
+        <input type="text" name="cep">
+        <input type="submit" name="Enviar">
+    </form>
 </body>
 </html>
